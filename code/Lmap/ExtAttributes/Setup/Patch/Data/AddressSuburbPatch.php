@@ -162,7 +162,7 @@ class AddressSuburbPatch implements DataPatchInterface, PatchRevertableInterface
             'position' => 105,
             'sort_order' => 105,
             'system'=> 0,
-            'visible' => 0,
+            'visible' => 1,
             'visible_on_front' => 1,
             'user_defined' => 1
         ]);
@@ -223,6 +223,13 @@ class AddressSuburbPatch implements DataPatchInterface, PatchRevertableInterface
         $this->logger->debug('Customer Address Suburb Added');
         $this->logger->debug('DDL Statements');
 
+        // This procedure of adding columns to flat tables is old as well and unnecessary.
+        // Just declare columns in db_schema.xml file only.
+        // If we only use quoteSetup.php and salesSetup.php and do not define db_schema.xml then error
+        // 'DDL statements are not allowed in transactions' will occur while running setup:upgrade command.
+        // Also if db_schema.xml is defined and below lines are also uncommented then setup:upgrade will still run
+        // successfully, which is kind of rendundant.
+        /*
         $quoteSetup = $this->quoteSetupFactory->create();
 
         $quoteSetup->addAttribute('quote_address', self::CUSTOM_ATTRIBUTE_CODE, []);
@@ -230,12 +237,12 @@ class AddressSuburbPatch implements DataPatchInterface, PatchRevertableInterface
         //            'type' => Table::TYPE_TEXT,
         //            'length'=> 255,
         //            'visible' => true,
-        //            'nullable' => true
+        //            'nullable' => false
         //        ]
 
         $salesSetup = $this->salesSetupFactory->create();
         $salesSetup->addAttribute('order_address', self::CUSTOM_ATTRIBUTE_CODE, []);
-
+        */
         $this->logger->debug('Script working');
         // OLD WAY of Adding Attributes to Flat Tables.
         // Adding suburb field to quote and sales_orders tables.
