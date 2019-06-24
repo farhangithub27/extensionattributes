@@ -14,7 +14,7 @@ class LayoutProcessorPlugin
     ) {
 
         $customAttributeCode = 'suburb';
-        $suburb= [
+        $suburb = [
             'component' => 'Magento_Ui/js/form/element/abstract',
             'config' => [
                 // customScope is used to group elements within a single form (e.g. they can be validated separately)
@@ -42,7 +42,7 @@ class LayoutProcessorPlugin
             'id' => 'suburb'
         ];
         $jsLayout['components']['checkout']['children']['steps']['children']['shipping-step']['children']
-        ['shippingAddress']['children']['shipping-address-fieldset']['children'][$customAttributeCode] =$suburb;
+        ['shippingAddress']['children']['shipping-address-fieldset']['children'][$customAttributeCode] = $suburb;
         //$jsLayout['components']['checkout']['children']['steps']['children']['billing-step']['children']
         //['payment']['children']['payments-list']['children'];
 

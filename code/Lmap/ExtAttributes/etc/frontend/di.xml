@@ -2,4 +2,9 @@
     <type name="Magento\Checkout\Block\Checkout\LayoutProcessor">
         <plugin name="add_custom_field_checkout_form" type="Lmap\ExtAttributes\Plugin\Checkout\Block\Checkout\LayoutProcessorPlugin" sortOrder="100"/>
     </type>
+
+    <type name="Magento\Quote\Model\ShippingAddressManagement">
+        <plugin disabled="false" name="Lmap_ExtAttributes_Plugin_Quote_Model_ShippingAddressManagement" type="Lmap\ExtAttributes\Plugin\Quote\Model\ShippingAddressManagementPlugin" sortOrder="10"/>
+    </type>
+
 </config>

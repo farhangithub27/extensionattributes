@@ -9,4 +9,12 @@
         <attribute code="suburb" type="string" />
     </extension_attributes>
 
+    <extension_attributes for="Magento\Customer\Api\Data\AddressInterface">
+        <attribute code="suburb" type="string" />
+    </extension_attributes>
+
+    <extension_attributes for="Magento\Checkout\Api\Data\ShippingInformationInterface">
+        <attribute code="suburb" type="string"/>
+    </extension_attributes>
+
 </config>

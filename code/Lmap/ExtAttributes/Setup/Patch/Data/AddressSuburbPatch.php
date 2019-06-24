@@ -295,9 +295,9 @@ class AddressSuburbPatch implements DataPatchInterface, PatchRevertableInterface
     public function revert()
     {
         $this->moduleDataSetup->getConnection()->startSetup();
-        //Here should go code that will revert all operations from `apply` method
-        //Please note, that some operations, like removing data from column, that is in role of foreign key reference
-        //is dangerous, because it can trigger ON DELETE statement
+        // Here should go code that will revert all operations from `apply` method
+        // Please note, that some operations, like removing data from column, that is in role of foreign key reference
+        // is dangerous, because it can trigger ON DELETE statement
         $this->moduleDataSetup->getConnection()->endSetup();
     }
 
