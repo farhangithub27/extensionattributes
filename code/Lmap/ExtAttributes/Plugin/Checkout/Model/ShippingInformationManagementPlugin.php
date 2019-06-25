@@ -45,6 +45,8 @@ class ShippingInformationManagementPlugin
             $shippingAddress->setSuburb($suburbField);
         }
         $quote = $this->quoteRepository->getActive($cartId);
-        //$this->quoteAddress->setExtensionAttributes($suburbField);
+        $quote->setSuburb($suburbField);
+        $this->quoteAddress->setExtensionAttributes($suburbField);
+        $test =1;
     }
 }
